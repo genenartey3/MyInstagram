@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Intent toHome = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(toHome);
+                    finish();
                 } else {
                     Log.d("LoginActivity", "Login Failed");
                     e.printStackTrace();
