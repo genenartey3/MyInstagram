@@ -6,19 +6,12 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.myinstagram.Fragments.ComposeFragment;
 import com.example.myinstagram.Fragments.FeedFragment;
 import com.example.myinstagram.Fragments.ProfileFragment;
-import com.example.myinstagram.model.Post;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-
-import java.util.List;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -70,35 +63,4 @@ public class HomeActivity extends AppCompatActivity {
         // Set default selection
         bottomNavigationView.setSelectedItemId(R.id.action_home);
     }
-
-    private void loadTopPosts() {
-        // creating new post query class
-        final Post.Query postsQuery = new Post.Query();
-        // get top 20 posts with user info
-        postsQuery.getTop().withUser();
-
-
-
-        // registers sub class
-        ParseObject.registerSubclass(Post.class);
-
-        // make query to grab current posts
-        postsQuery.findInBackground(new FindCallback<Post>() {
-            @Override
-            public void done(List<Post> objects, ParseException e) {
-                if (e == null) {
-                    for (int i = 0; i < objects.size(); i++) {
-                        Log.d("HomeActivity", "Post[" + i + "] = " + objects.get(i).getDescription()
-                                + " username =" + objects.get(i).getUser().getUsername());
-                    }
-                } else {
-                    Log.d("HomeActivity", "Querying of Posts failed");
-                    e.printStackTrace();
-                }
-            }
-        });
-
-    }
-
-
 }

@@ -60,7 +60,6 @@ public class ComposeFragment extends Fragment {
         // establish references to layout elements
         descriptionInput = view.findViewById(R.id.etDescription);
         btnCreate = view.findViewById(R.id.btnCreate);
-        btnRefresh = view.findViewById(R.id.btnRefresh);
         btnGetPic = view.findViewById(R.id.btnGetPic);
         ivPreview = view.findViewById(R.id.ivPreview);
 
