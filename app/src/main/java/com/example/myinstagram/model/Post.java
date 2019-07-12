@@ -6,13 +6,21 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+
 @ParseClassName("Post")
 public class Post extends ParseObject {
 
+
+    public Post() {
+
+    }
+
+
     // create keys that mimic database columns exactly
-    private static final String KEY_DESCRIPTION = "description";
-    private static final String KEY_IMAGE = "image";
-    private static final String KEY_USER = "user";
+     static final String KEY_DESCRIPTION = "description";
+     static final String KEY_IMAGE = "image";
+     static final String KEY_USER = "user";
+     static final String KEY_TIME = "createdAt";
 
     //create accessors and mutators for each input
 

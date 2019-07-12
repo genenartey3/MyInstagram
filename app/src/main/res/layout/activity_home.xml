@@ -6,13 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="413dp"
+        android:layout_height="43dp"
+        android:background="?attr/colorPrimary"
+        android:fitsSystemWindows="true"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@android:color/black"></android.support.v7.widget.Toolbar>
+
     <FrameLayout
         android:id="@+id/flContainer"
-        android:layout_width="409dp"
-        android:layout_height="658dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"></FrameLayout>
 
 
     <android.support.design.widget.BottomNavigationView

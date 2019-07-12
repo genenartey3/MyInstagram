@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsActivity">
+
+    <ImageView
+        android:id="@+id/ivSelectedImage"
+        android:layout_width="356dp"
+        android:layout_height="356dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsername "
+        app:srcCompat="@drawable/camera_shadow_fill" />
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="356dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Username"
+        app:layout_constraintBottom_toTopOf="@+id/ivSelectedImage "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="356dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLike" />
+
+    <ImageView
+        android:id="@+id/ivLike"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivSelectedImage "
+        app:srcCompat="@drawable/ufi_heart" />
+
+    <ImageView
+        android:id="@+id/ivComment"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintStart_toEndOf="@+id/ivLike"
+        app:layout_constraintTop_toTopOf="@+id/ivLike"
+        app:srcCompat="@drawable/ufi_comment" />
+
+    <ImageView
+        android:id="@+id/ivDirectMsg"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintStart_toEndOf="@+id/ivComment"
+        app:layout_constraintTop_toTopOf="@+id/ivComment"
+        app:srcCompat="@drawable/direct" />
+
+    <ImageView
+        android:id="@+id/ivBookMark"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivDirectMsg"
+        app:srcCompat="@drawable/ufi_save" />
+
+    <TextView
+        android:id="@+id/tvTimeStamp"
+        android:layout_width="282dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Created At..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+</android.support.constraint.ConstraintLayout>

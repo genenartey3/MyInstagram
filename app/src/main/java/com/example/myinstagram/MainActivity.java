@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnLogin;
     private Button btnSignUp;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,17 @@ public class MainActivity extends AppCompatActivity {
                 createNewUser(newUsername, password);
             }
         });
+
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+            Log.d("LoginActivity", "Login successful!!");
+
+            Intent toHome = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(toHome);
+            finish();
+        } else {
+            // show the signup or login screen
+        }
 
 
 

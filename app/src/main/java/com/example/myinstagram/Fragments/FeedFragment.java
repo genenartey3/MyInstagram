@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -31,6 +32,9 @@ public class FeedFragment extends Fragment {
     //initialize list of posts variable
     public List<Post> mPosts;
 
+    //initialize swipe to refresh container
+    SwipeRefreshLayout swipeContainer;
+
 
 
     @Nullable
@@ -52,6 +56,18 @@ public class FeedFragment extends Fragment {
         //set layout manager on recycler view
         rvFeed.setLayoutManager(new LinearLayoutManager(getContext()));
         // crate data source ie. list of posts
+
+        // Lookup the swipe container view
+        swipeContainer = view.findViewById(R.id.swipeContainer);
+
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mPosts.clear();
+                loadTopPosts();
+                swipeContainer.setRefreshing(false);
+            }
+        });
 
 
         loadTopPosts();
@@ -95,4 +111,5 @@ public class FeedFragment extends Fragment {
         });
 
     }
+
 }
