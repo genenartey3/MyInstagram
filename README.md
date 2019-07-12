@@ -1,4 +1,4 @@
-# Project 3 - **
+# Project 3 - *MyInstagram*
 
 **MyInstagram** is a photo sharing app using Parse as its backend.
 
